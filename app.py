@@ -9,7 +9,7 @@ def home():
         "name": "Yuki Minami",
         "title": "Aspiring Cloud Developer",
         "bio": "I build simple, useful web experiences and enjoy learning modern cloud tools.",
-        "location": "City, Country",
+        "location": "Marikina City, Philippines",
         "email": "you@example.com",
         "github": "https://github.com/yourusername",
         "linkedin": "https://www.linkedin.com/in/yourusername",
