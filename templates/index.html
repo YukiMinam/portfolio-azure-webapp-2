@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ profile.name }} | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Welcome</p>
+        <h1>{{ profile.name }}</h1>
+        <h2>{{ profile.title }}</h2>
+        <p>{{ profile.bio }}</p>
+        <a class="button" href="#contact">Get in touch</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <h3>About</h3>
+        <p>
+          I am a beginner-friendly developer exploring Python, Flask, and Azure
+          App Service. This portfolio sample is designed to be easy to customize
+          for workshops and demos.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>Projects</h3>
+        <div class="card-grid">
+          {% for project in projects %}
+          <article class="card">
+            <h4>{{ project.name }}</h4>
+            <p>{{ project.description }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>Location: {{ profile.location }}</li>
+          <li>Email: {{ profile.email }}</li>
+          <li>
+            GitHub: <a href="{{ profile.github }}">{{ profile.github }}</a>
+          </li>
+          <li>
+            LinkedIn:
+            <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
